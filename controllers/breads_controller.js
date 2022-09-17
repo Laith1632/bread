@@ -12,6 +12,16 @@ breads.get('/', (req, res) => {
 // res.send(Bread)
 })
 
+// CREATE
+breads.post('/', (req, res) => {
+  if(req.body.hasGluten === 'on') {
+    req.body.hasGluten = 'true'
+  } else {
+    req.body.hasGluten = 'false'
+  }
+  Bread.push(req.body)
+  res.send(Bread)
+})
 
 
 
